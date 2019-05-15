@@ -19,27 +19,19 @@ Check staking Energi is a simple script that checking staking work and in case o
 
 # Config.ini description
 
-[SMTP]
+**SMTP**
+- address - SMTP server name or IP
+- username - SMTP username
+- password - SMTP password
+- port - SMTP port
+- from - from which e-mail the message should be sent
+- to - e-mail address for the notification
 
-address - SMTP server name or IP
+**MESSAGE**
+- topic - message topic
 
-username - SMTP username
-
-password - SMTP password
-
-port - SMTP port
-
-from - from which e-mail the message should be sent
-
-to - e-mail address for the notification
-
-[MESSAGE]
-
-topic - message topic
-
-[ENERGI]
-
-core_path - path to `enegli-cli` program. Example: `/home/username/energicore-2.1.2/bin/energi-cli`
+**ENERGI**
+- core_path - path to `enegli-cli` program. Example: `/home/username/energicore-2.1.2/bin/energi-cli`
 
 # Support
 
