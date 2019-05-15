@@ -4,14 +4,20 @@ import os
 import configparser
 import smtplib
 from email.message import EmailMessage
-
+import subprocess
 
 
 def check_staking():
-    staking_result = os.popen("staking").read()
+   
+    command = ("""
+    staking="$$$PATH getstakingstatus"
+    $staking
+    """).replace("$$$PATH", core_path)
 
-    if "false" in staking_result:
-        send_mail(staking_result)
+    result = os.popen(command).read()
+    
+    if "false" in result:
+        send_mail(result)
     
     return
         
@@ -50,5 +56,7 @@ if __name__ == "__main__":
     to_email = config['SMTP']['to']
 
     topic = config['MESSAGE']['topic']
+
+    core_path = config['ENERGI']['core_path']
 
     check_staking()
