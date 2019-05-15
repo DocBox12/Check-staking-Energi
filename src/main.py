@@ -8,7 +8,7 @@ from email.message import EmailMessage
 
 
 def check_staking():
-    staking_result = os.popen("energicore-2.1.2/bin/energi-cli getstakingstatus").read()
+    staking_result = os.popen("staking").read()
 
     if "false" in staking_result:
         send_mail(staking_result)
